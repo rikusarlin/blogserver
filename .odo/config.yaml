@@ -1,0 +1,27 @@
+kind: LocalConfig
+apiversion: odo.dev/v1alpha1
+ComponentSettings:
+  Type: nodejs
+  SourceLocation: ./
+  SourceType: local
+  Ports:
+  - 8080/TCP
+  Application: app
+  Project: blogs
+  Name: nodejs-blogserver-nocv
+  Envs:
+  - Name: PORT
+    Value: "3003"
+  - Name: SECRET
+    Value: TosiSalainenStringi
+  - Name: MONGODB_URI_DEV
+    Value: mongodb+srv://fullstack:fullstack@cluster0.cwkqn.mongodb.net/bloglist-app-dev?retryWrites=true&w=majority
+  - Name: MONGODB_URI_TEST
+    Value: mongodb+srv://fullstack:fullstack@cluster0.cwkqn.mongodb.net/bloglist-app-test?retryWrites=true&w=majority
+  - Name: MONGODB_URI
+    Value: mongodb+srv://fullstack:fullstack@cluster0.cwkqn.mongodb.net/bloglist-app?retryWrites=true&w=majority
+  - Name: NODE_ENV
+    Value: production
+  Url:
+  - Name: nodejs-blogserver-nocv-8080
+    Port: 8080
