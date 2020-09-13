@@ -5,6 +5,11 @@ const logger = require('./utils/logger')
 
 const server = http.createServer(app)
 
-server.listen(config.PORT, () => {
-  logger.info(`Server running on port ${config.PORT}`)
+let port = config.PORT
+if(port === undefined){
+  port = 8080
+}
+
+server.listen(port, () => {
+  logger.info(`Server running on port ${port}`)
 })
